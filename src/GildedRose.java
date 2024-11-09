@@ -29,10 +29,7 @@ class GildedRose {
                 }
             } else
             {
-                if (item.quality > 0)
-                {
-                    item.decrease_quality_if_needed();
-                }
+                item.decrease_quality_if_needed();
             }
 
             if (!item.name.equals("Sulfuras, Hand of Ragnaros"))
@@ -52,10 +49,7 @@ class GildedRose {
                         item.quality = 0;
                     } else
                     {
-                        if (item.quality > 0)
-                        {
-                            item.decrease_quality_if_needed();
-                        }
+                        item.decrease_quality_if_needed();
                     }
                 }
             }
