@@ -10,17 +10,12 @@ class GildedRose {
         {
             if (item.name.equals("Aged Brie"))
             {
-                if (item.quality < 50)
-                {
-                    item.quality++;
-                }
+                item.increase_quality_if_needed();
             }
 
             else if (item.name.equals("Backstage passes to a TAFKAL80ETC concert"))
             {
-                if (item.quality < 50)
-                {
-                    item.quality++;
+                item.increase_quality_if_needed();
 
                 if (item.sellIn < 11)
                 {
@@ -32,7 +27,7 @@ class GildedRose {
                     item.increase_quality_if_needed();
                 }
 
-                }
+
             }
             else
             {
@@ -44,22 +39,21 @@ class GildedRose {
                 item.sellIn--;
             }
 
-            if (item.sellIn < 0)
-            {
-                if (item.name.equals("Aged Brie"))
-                {
-                    item.increase_quality_if_needed();
-                }
-                else if (item.name.equals("Backstage passes to a TAFKAL80ETC concert"))
-                {
-                    item.quality = 0;
-                }
-                else
-                {
-                    item.decrease_quality_if_needed();
-                }
 
+            if (item.name.equals("Aged Brie") && (item.sellIn < 0))
+            {
+                item.increase_quality_if_needed();
             }
+            else if (item.name.equals("Backstage passes to a TAFKAL80ETC concert") && (item.sellIn < 0))
+            {
+                item.quality = 0;
+            }
+            else if (item.sellIn < 0)
+            {
+                item.decrease_quality_if_needed();
+            }
+
+
         }
     }
 
