@@ -32,4 +32,15 @@ public class Item {
             quality++;
         }
     }
+
+    public void update_quality()
+    {
+        decrease_quality_if_needed();
+
+        sellIn--;
+        if (sellIn < 0)
+        {
+            decrease_quality_if_needed();
+        }
+    }
 }
