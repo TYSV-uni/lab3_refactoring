@@ -16,4 +16,20 @@ public class Item {
     public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
+
+    public void decrease_quality_if_needed()
+    {
+        if (!name.equals("Sulfuras, Hand of Ragnaros"))
+        {
+            quality--;
+        }
+    }
+
+    public void increase_quality_if_needed()
+    {
+        if (quality < 50)
+        {
+            quality++;
+        }
+    }
 }
